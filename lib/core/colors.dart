@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 
-const backgroundColor = Colors.white;
-const textColor = Color.fromRGBO(241, 241, 242, 1);
-const appBarColor = Color.fromRGBO(31, 44, 52, 1);
-var buttonBackGround = Colors.amber.shade800;
-const buttonShadowsColor = Colors.grey;
-const buttonTextColor = Colors.white;
+
+class AppColor {
+static  const backgroundColor = Colors.white;
+static const textColor = Color.fromRGBO(241, 241, 242, 1);
+ static const appBarColor = Color.fromRGBO(31, 44, 52, 1);
+static const buttonBackGround = Color.fromARGB(255, 228, 86, 4);
+static const buttonShadowsColor = Colors.grey;
+  static const buttonTextColor = Colors.white;
+ 
+  
+}

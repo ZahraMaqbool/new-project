@@ -1,122 +1,99 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 
 class IntroductoryFirstPage extends StatelessWidget {
   static const routeName = '/page_1';
+
+  // constants for
+  static const double lottieTopMarginFactor = 0.05; 
+  static const double lottieSizeFactor = 0.2; 
+  static const double text1TopMarginFactor = 0.03; 
+  static const double text2TopMarginFactor = 0.02; 
+  static const double text1FontSizeFactor = 0.1; 
+  static const double text2FontSizeFactor = 0.04; 
+
   const IntroductoryFirstPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final Size screenSize = MediaQuery.of(context).size;
+
     return Scaffold(
-        backgroundColor: Colors.white,
-        body: Expanded(
-          flex: 100,
-          child: Container(
-              height: MediaQuery.sizeOf(context).height * 1,
-              width: MediaQuery.sizeOf(context).width * 1,
-              decoration: const BoxDecoration(
-                  // color: Colors.black
-          
+      backgroundColor: Colors.white,
+      body: SizedBox(
+        width: screenSize.width,
+        height: screenSize.height,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SafeArea(
+                child: Container(
+                  margin: EdgeInsets.only(
+                      top: screenSize.height * lottieTopMarginFactor),
+                  child: Lottie.asset(
+                    'assets/lottie_two.json',
+                    height: screenSize.height * lottieSizeFactor,
+                    width: screenSize.height * lottieSizeFactor,
                   ),
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    SafeArea(
-                      child: Container(
-                        margin: const EdgeInsets.only(top: 50),
-                        decoration: const BoxDecoration(),
-                        child: Image.asset(
-                          'assets/plate_2.jpeg',
-                          height: 300,
-                          width: 300,
-                          fit: BoxFit.fill,
+                ),
+              ),
+             
+              Container(
+                margin: EdgeInsets.only(
+                    top: screenSize.height * text1TopMarginFactor),
+                child: AnimatedTextKit(
+                  animatedTexts: [
+                    TypewriterAnimatedText(
+                      "Welcome to Food",
+                      textStyle: GoogleFonts.allison(
+                        textStyle: TextStyle(
+                          fontSize: screenSize.width * text1FontSizeFactor,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.amber.shade900,
+                          letterSpacing: 0.3,
                         ),
                       ),
+                      speed: const Duration(milliseconds: 100),
                     ),
-          
-                    Container(
-                      margin: const EdgeInsets.only(top: 30),
-                      child: AnimatedTextKit(
-                        animatedTexts: [
-                          TypewriterAnimatedText(
-                            " Welcome to Food",
-                            textStyle: GoogleFonts.allison(
-                              textStyle: TextStyle(
-                                  fontSize: 53,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.amber.shade900,
-                                  letterSpacing: .3),
-                            ),
-                            speed: const Duration(milliseconds: 100),
-                          ),
-                        ],
-                        totalRepeatCount: 1,
-                        pause: const Duration(milliseconds: 100),
-                        displayFullTextOnTap: false,
-                        stopPauseOnTap: false,
-                      ),
-                    ),
-          
-                    Container(
-                      margin: const EdgeInsets.only(top: 20),
-                      child: AnimatedTextKit(
-                        animatedTexts: [
-                          TypewriterAnimatedText(
-                            "Let,s eat some Diet Food\n While steak to cook.",
-                            textStyle: GoogleFonts.abhayaLibre(
-                              textStyle: TextStyle(
-                                  fontSize: 22,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.amber.shade600,
-                                  letterSpacing: .3),
-                            ),
-                            speed: const Duration(milliseconds: 100),
-                          ),
-                        ],
-                        totalRepeatCount: 1,
-                        pause: const Duration(milliseconds: 100),
-                        displayFullTextOnTap: false,
-                        stopPauseOnTap: false,
-                      ),
-                      // child:
-                      //     Text("Let,s eat some Diet Food\n While steak to cook.",
-                      //         // ),
-                      //         style: GoogleFonts.abhayaLibre(
-                      //           textStyle: TextStyle(
-                      //               fontSize: 22,
-                      //               color: Colors.grey.shade500,
-                      //               letterSpacing: .5),
-                      //         )),
-                    ),
-                    // GestureDetector(
-                    //   onTap: () {
-                    //     Navigator.push(
-                    //         context,
-                    //         MaterialPageRoute(
-                    //           builder: (context) =>const Page2(),
-                    //         ));
-                    //   },
-                    //   child: Container(
-                    //     height: 50,
-                    //     width: 50,
-                    //     margin: const EdgeInsets.only(top: 40),
-                    //     decoration: BoxDecoration(
-                    //         color: Colors.white,
-                    //         borderRadius: BorderRadius.circular(90),
-                    //         boxShadow: const [
-                    //           BoxShadow(
-                    //               color: Colors.grey,
-                    //               blurRadius: 4,
-                    //               spreadRadius: 3,
-                    //               offset: Offset(-1, 2)),
-                    //         ]),
-                    //     child: const Icon(Icons.arrow_forward),
-                    //   ),
-                    // )
                   ],
+                  totalRepeatCount: 1,
+                  pause: const Duration(milliseconds: 100),
+                  displayFullTextOnTap: false,
+                  stopPauseOnTap: false,
                 ),
-              )),
-        ));
+              ),
+             
+              Container(
+                margin: EdgeInsets.only(
+                    top: screenSize.height * text2TopMarginFactor),
+                child: AnimatedTextKit(
+                  animatedTexts: [
+                    TypewriterAnimatedText(
+                      "Let's eat some Diet Food\nWhile steak to cook.",
+                      textStyle: GoogleFonts.abhayaLibre(
+                        textStyle: TextStyle(
+                          fontSize: screenSize.width * text2FontSizeFactor,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.amber.shade600,
+                          letterSpacing: 0.3,
+                        ),
+                      ),
+                      speed: const Duration(milliseconds: 100),
+                    ),
+                  ],
+                  totalRepeatCount: 1,
+                  pause: const Duration(milliseconds: 100),
+                  displayFullTextOnTap: false,
+                  stopPauseOnTap: false,
+                ),
+              ),
+              // Button (if uncommented)
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

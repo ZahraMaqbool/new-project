@@ -36,13 +36,16 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+   double topContainer = 620;
+  double leftContainer = 150;
+
   PageController controller = PageController();
 
   final List<Widget> _list = [
-    const Center(
+   const Center(
       child: IntroductoryFirstPage(),
     ),
-    const Center(
+   const  Center(
       child: IntroductorySecondPage(),
     ),
     const Center(child: IntroductoryThirdPage()),
@@ -57,8 +60,8 @@ class _MyHomePageState extends State<MyHomePage> {
           children: _list,
         ),
         Positioned(
-          top: 620,
-          left: 150,
+          top: topContainer,
+          left: leftContainer,
           child: SmoothPageIndicator(
               controller: controller,
               count: 3,
