@@ -33,6 +33,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
+  carousel_slider:
+    dependency: "direct main"
+    description:
+      name: carousel_slider
+      sha256: "7b006ec356205054af5beaef62e2221160ea36b90fb70a35e4deacd49d0349ae"
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.0.0"
   characters:
     dependency: transitive
     description:
@@ -94,6 +102,30 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_carousel_slider_plus:
+    dependency: "direct dev"
+    description:
+      name: flutter_carousel_slider_plus
+      sha256: d7f57f52c6dfc064780a93fc57e62d309a2ea30c684533629bd289d6d352e75e
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.1"
+  flutter_carousel_widget:
+    dependency: "direct main"
+    description:
+      name: flutter_carousel_widget
+      sha256: b57a42db67b7ffaa5f7922f3f90204a0266f68784455253cbaa247e665f12301
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.1"
+  flutter_hooks:
+    dependency: "direct main"
+    description:
+      name: flutter_hooks
+      sha256: cde36b12f7188c85286fba9b38cc5a902e7279f36dd676967106c041dc9dde70
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.20.5"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -195,6 +227,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.15.0"
+  page_controller_listenable:
+    dependency: "direct dev"
+    description:
+      name: page_controller_listenable
+      sha256: "79d3432a556a97bd167e57569ff41a579fcc8434755e1a4107155afa6818ff3c"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.3"
   path:
     dependency: transitive
     description:
