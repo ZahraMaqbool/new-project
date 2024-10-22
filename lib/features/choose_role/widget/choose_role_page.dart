@@ -4,8 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:practice_practice/core/common/widgets/custom_button.dart';
 import 'package:practice_practice/core/common/widgets/divider.dart';
 import 'package:practice_practice/core/constants/string/app_colors.dart';
-import 'package:practice_practice/features/client/views/screens/sign_in_page.dart';
-
+import 'package:practice_practice/features/client/widgets/sign_in_page.dart';
 
 class ChooseRolePage extends StatelessWidget {
   static const routeName = '/choose_Role';
@@ -34,6 +33,16 @@ class ChooseRolePage extends StatelessWidget {
               fit: BoxFit.contain,
             ),
           ),
+          // Align(
+          //   alignment: const Alignment(0, 0),
+          //   child: Lottie.asset(
+          //     // 'a ssets/lottie_one.json',
+          //     'asstes/lottie_one.json',
+          //     // width: width * 0.6,
+          //     // height: height * 0.4,
+          //     // fit: BoxFit.contain,
+          //   ),
+          // ),
           // FlutterCarousel.builder(
           //   itemCount: 3,
           //   itemBuilder: (context, index, realIndex) {

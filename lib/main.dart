@@ -19,5 +19,6 @@ class MyApp extends StatelessWidget {
         initialRoute: OnBordingPage.routName,
         onGenerateRoute: generateRoute,
         home: OnBordingPage());
+        
   }
 }
