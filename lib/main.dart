@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:practice_practice/configuration/navigation/routes.dart';
-import 'package:practice_practice/configuration/theme/app_theme.dart';
+import 'package:practice_practice/configuration/app_theme.dart';
+import 'package:practice_practice/configuration/routes.dart';
 import 'package:practice_practice/on_boarding/views/widgets/on_bording_page.dart';
 
 void main() {
@@ -19,6 +19,5 @@ class MyApp extends StatelessWidget {
         initialRoute: OnBordingPage.routName,
         onGenerateRoute: generateRoute,
         home: OnBordingPage());
-        
   }
 }

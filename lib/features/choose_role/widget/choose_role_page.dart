@@ -4,7 +4,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:practice_practice/core/common/widgets/custom_button.dart';
 import 'package:practice_practice/core/common/widgets/divider.dart';
 import 'package:practice_practice/core/constants/string/app_colors.dart';
-import 'package:practice_practice/features/client/widgets/sign_in_page.dart';
+
+import '../../client/auth/views/sign_in_page.dart';
+// import 'package:practice_practice/features/client/widgets/sign_in_page.dart';
 
 class ChooseRolePage extends StatelessWidget {
   static const routeName = '/choose_Role';

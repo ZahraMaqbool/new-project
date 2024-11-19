@@ -4,10 +4,13 @@ import 'package:practice_practice/core/common/widgets/custom_text_field.dart';
 import 'package:practice_practice/core/common/widgets/divider.dart';
 import 'package:practice_practice/core/common/widgets/user_side_btn.dart';
 import 'package:practice_practice/core/constants/string/app_colors.dart';
-import 'package:practice_practice/features/client/views/screens/dash_board_screen.dart';
+// import 'package:practice_practice/features/client/views/screens/dash_board_screen.dart';
 // import 'package:practice_practice/features/client/views/dash_board_screen.dart';
 // import 'package:practice_practice/features/client/widgets/dash_board_screen.dart';
-import 'package:practice_practice/features/client/widgets/sign_in_page.dart';
+// import 'package:practice_practice/features/client/widgets/sign_in_page.dart';
+
+import 'dash_board_screen.dart';
+import 'sign_in_page.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:practice_practice/core/constants/string/app_colors.dart';
-import 'package:practice_practice/features/client/models/restaurant.dart';
+// import 'package:practice_practice/features/client/models/restaurant.dart';
+
+import '../auth/models/restaurant.dart';
 // import 'package:practice_practice/features/client/views/dash_board_screen.dart';
 
 class RestaurantListView extends StatefulWidget {

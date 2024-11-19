@@ -5,10 +5,8 @@ import 'package:practice_practice/core/common/widgets/custom_button.dart';
 import 'package:practice_practice/core/common/widgets/custom_text_field.dart';
 import 'package:practice_practice/core/common/widgets/divider.dart';
 import 'package:practice_practice/core/constants/string/app_colors.dart';
-// import 'package:practice_practice/features/client/widgets/sign_in_page.dart';
 
-import '../auth/views/sign_in_page.dart';
-// import 'package:practice_practice/features/client/widgets/verification_password_page.dart';
+import 'sign_in_page.dart';
 
 class ForgetPasswordPage extends StatefulWidget {
   static const routeName = "/forget_password";

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:practice_practice/features/client/models/products.dart';
+// import 'package:practice_practice/features/client/models/products.dart';
+
+import '../auth/models/products.dart';
 
 class ProductsListView extends StatefulWidget {
   const ProductsListView({super.key});

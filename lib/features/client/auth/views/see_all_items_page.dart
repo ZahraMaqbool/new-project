@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:practice_practice/core/constants/string/app_colors.dart';
+import 'package:practice_practice/features/client/auth/views/items_detail_page.dart';
 
-import '../auth/models/items.dart';
-import '../auth/views/items_detail_page.dart';
+import '../models/items.dart';
 
-class ItemListView extends StatefulWidget {
-  const ItemListView({
-    super.key,
-  });
+class SeeAllItemsPage extends StatefulWidget {
+  static const routeName = "see_all_items";
+  const SeeAllItemsPage({super.key});
 
   @override
-  State<ItemListView> createState() => _ItemListViewState();
+  State<SeeAllItemsPage> createState() => _SeeAllItemsPageState();
 }
 
-class _ItemListViewState extends State<ItemListView> {
+class _SeeAllItemsPageState extends State<SeeAllItemsPage> {
   final List<Items> items = [
     Items(
       name: "Chicken Burger",
@@ -97,51 +97,105 @@ class _ItemListViewState extends State<ItemListView> {
     ),
   ];
 
+  final TextEditingController _controller = TextEditingController();
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      scrollDirection: Axis.horizontal,
-      itemCount: items.length,
-      itemBuilder: (context, index) {
-        return GestureDetector(
-          onTap: () {
-            Navigator.push(context, MaterialPageRoute(
-              builder: (context) {
-                return ItemsDetailPage(items: items[index]);
-              },
-            ));
-          },
-          child: Container(
-            margin: const EdgeInsets.only(left: 10),
-            decoration: BoxDecoration(
-                color: Colors.white,
-                border: Border.all(
-                  color: AppColors.grayColor,
-                ),
-                borderRadius: BorderRadius.circular(20)),
-            child: Column(
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(90),
-                  child: Image.asset(
-                    items[index].imageUrl,
-                    fit: BoxFit.fill,
-                  ),
-                ),
-                Text(items[index].name),
-                Row(
-                  children: [
-                    const SizedBox(
-                      width: 4,
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: AppColors.whiteColor,
+      ),
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const SizedBox(height: 30),
+              Row(
+                children: [
+                  const Spacer(flex: 1),
+                  Expanded(
+                    flex: 6,
+                    child: TextFormField(
+                      controller: _controller,
+                      style: const TextStyle(color: Colors.black),
+                      decoration: InputDecoration(
+                        fillColor: Colors.amber.shade100,
+                        hintText: 'Search items',
+                        hintStyle:
+                            const TextStyle(color: Colors.grey, fontSize: 18),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                      ),
                     ),
-                    Text(items[index].price.toString()),
-                  ],
-                )
-              ],
-            ),
+                  ),
+                  const Spacer(flex: 1),
+                ],
+              ),
+              const SizedBox(height: 20),
+              MasonryGridView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                gridDelegate:
+                    const SliverSimpleGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                ),
+                itemCount: items.length,
+                itemBuilder: (context, index) {
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context) {
+                          return ItemsDetailPage(items: items[index]);
+                        },
+                      ));
+                    },
+                    child: Container(
+                      margin: const EdgeInsets.all(8.0),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(color: Colors.grey),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(15),
+                            child: Image.asset(
+                              items[index].imageUrl,
+                              fit: BoxFit.cover,
+                              height: (index % 3 == 0) ? 180 : 100,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              items[index].name,
+                              style: const TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ],
           ),
-        );
-      },
+        ),
+      ),
     );
   }
 }

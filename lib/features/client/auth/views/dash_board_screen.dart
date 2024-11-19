@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:practice_practice/core/common/widgets/search_bar_widget.dart';
 import 'package:practice_practice/core/constants/string/app_colors.dart';
+// import 'package:practice_practice/features/client/views/screens/see_all_items_page.dart';
 import 'package:practice_practice/features/client/widgets/item_list_view.dart';
 import 'package:practice_practice/features/client/widgets/products_list_view.dart';
 import 'package:practice_practice/features/client/widgets/restaurant_list_view.dart';
 import 'package:practice_practice/features/client/widgets/user_app_widget.dart';
+
+import 'see_all_items_page.dart';
 
 class DashBoardScreen extends StatefulWidget {
   static const routeName = "/dashboard_screen";
@@ -52,7 +55,9 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
             ),
             SizedBox(
               child: CategoryTextWidget(
-                onPressesd: () {},
+                onPressesd: () {
+                  Navigator.pushNamed(context, SeeAllItemsPage.routeName);
+                },
               ),
             ),
             const SizedBox(
@@ -70,9 +75,11 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
               height: _sizeBoxHeight3,
             ),
             SizedBox(
-              child: RestauranTextWidget(onPressesd: () {}),
+              child: RestauranTextWidget(onPressesd: () {
+               
+              }),
             ),
-           const SizedBox(
+            const SizedBox(
               child: RestaurantListView(),
             )
           ],
